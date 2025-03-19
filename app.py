@@ -81,7 +81,7 @@ def reload_data():
     global model, encoder
 
     # Step 1: Download and decompress data
-    url = 'https://data.insideairbnb.com/united-states/ma/boston/2024-06-22/data/listings.csv.gz'
+    url = 'https://data.insideairbnb.com/united-states/ny/new-york-city/2025-03-01/data/listings.csv.gz'
     response = requests.get(url)
     compressed_file = BytesIO(response.content)
     decompressed_file = gzip.GzipFile(fileobj=compressed_file)
@@ -154,12 +154,14 @@ def predict():
 
     # Define the list of valid neighborhoods
     valid_neighborhoods = [
-        "East Boston", "Roxbury", "Beacon Hill", "Back Bay", "North End", "Dorchester",
-        "Charlestown", "Jamaica Plain", "Downtown", "South Boston", "Bay Village",
-        "Brighton", "West Roxbury", "Roslindale", "South End", "Mission Hill",
-        "Fenway", "Allston", "Hyde Park", "West End", "Mattapan", "Leather District",
-        "South Boston Waterfront", "Chinatown", "Longwood Medical Area"
-    ]
+    "Prospect Heights", "East Harlem", "Boerum Hill", "Harlem", "Williamsburg", 
+    "Hell's Kitchen", "Midtown", "Fort Greene", "Bedford-Stuyvesant", "Crown Heights", 
+    "Clinton Hill", "Chelsea", "Washington Heights", "Gowanus", "Greenpoint", 
+    "Flatbush", "Soho", "Alphabet City", "Ridgewood", "Mott Haven", "Morningside Heights", 
+    "Ditmars Steinway", "Middle Village", "Astoria", "The Rockaways", "Hamilton Heights", 
+    "West Village", "Flatiron District", "Lower East Side", "Upper East Side", 
+    "Kips Bay", "Meatpacking District", "East Village", "Park Slope", "Prospect Lefferts Gardens"
+]
 
     # Check if the model and encoder are initialized
     if model is None or encoder is None:
