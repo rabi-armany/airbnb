@@ -9,7 +9,7 @@ This is a Flask-based API that predicts Airbnb rental prices based on several fa
 
 ### Data Source
 
-The data used for this project comes from the [Inside Airbnb dataset](https://insideairbnb.com/get-the-data/), which provides detailed information about Airbnb listings in various cities. For this particular app, the data for Boston, MA is used.
+The data used for this project comes from the [Inside Airbnb dataset](https://insideairbnb.com/get-the-data/), which provides detailed information about Airbnb listings in various cities. For this particular app, the data for New York, NY is used.
 
 The dataset includes important features such as:
 - **Price**: The rental price of the listing.
@@ -29,7 +29,7 @@ The process of prediction is as follows:
 2. **Model Training**: A linear regression model is trained on the cleaned dataset using features like bedrooms, bathrooms, accommodates, and one-hot encoded neighborhood values.
 3. **Prediction**: Once trained, the model can predict the rental price based on user input, such as the number of bedrooms, bathrooms, and neighborhood.
 
-By using this model, the app can provide quick rental price predictions for Airbnb listings in Boston based on historical data.
+By using this model, the app can provide quick rental price predictions for Airbnb listings in New York City based on historical data.
 
 
 ## Prerequisites
@@ -45,7 +45,7 @@ Before you can set up and run this app, ensure you have the following software i
 ### 1. Clone the Repository
 First, clone this repository to your local machine:
 ```bash
-git clone https://github.com/tjhoranumass/airbnb.git
+git clone https://github.com/rabi-armany/airbnb.git
 cd airbnb
 ```
 
@@ -150,7 +150,7 @@ curl -X POST http://127.0.0.1:5000/predict \
     "bedrooms": 2,
     "bathrooms": 1.5,
     "accommodates": 4,
-    "neighbourhood_cleansed": "South Boston"
+    "neighbourhood_cleansed": "Prospect Heights"
 }'
 ```
 
